@@ -1,0 +1,15 @@
+TextureProgressBar
+Control
+CanvasLayer
+MeshInstance3D
+SpotLight3D
+DirectionalLight3D
+OmniLight3D
+LightmapGI
+Node3D
+Area3D
+SpringArm3D
+XRCamera3D
+StaticBody3D
+CollisionShape3D
+RayCast3D

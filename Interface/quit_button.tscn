@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1vyllvi5dyqn"]
+
+[ext_resource type="Script" path="res://Interface/quit_button.gd" id="1_aa5dg"]
+[ext_resource type="Texture2D" uid="uid://draqxnkwmmky5" path="res://Textures/Menu/Nextbuttonhover.png" id="1_fb3x1"]
+[ext_resource type="Texture2D" uid="uid://dvyrxxmaj1at6" path="res://Textures/Menu/Play.png" id="2_a2ikh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6cxn"]
+bg_color = Color(0.956863, 0.52549, 0.407843, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.823529, 0.345098, 0.258824, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_knu5h"]
+content_margin_left = 25.0
+content_margin_top = 50.0
+content_margin_right = 25.0
+content_margin_bottom = 50.0
+texture = ExtResource("1_fb3x1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntqv2"]
+bg_color = Color(0.870614, 0.363905, 0.227928, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.715064, 0.278663, 0.201178, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0o37"]
+content_margin_left = 25.0
+content_margin_top = 50.0
+content_margin_right = 25.0
+content_margin_bottom = 50.0
+texture = ExtResource("2_a2ikh")
+
+[node name="QuitButton" type="Button"]
+size_flags_vertical = 10
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxFlat_t6cxn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_knu5h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ntqv2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l0o37")
+text = "Quit"
+script = ExtResource("1_aa5dg")
+
+[connection signal="pressed" from="." to="." method="_on_quit_button_pressed"]

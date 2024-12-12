@@ -1,0 +1,293 @@
+[gd_scene load_steps=42 format=3 uid="uid://58m5tiy71sct"]
+
+[ext_resource type="PackedScene" uid="uid://76aintt6r8e6" path="res://Player/male_character.tscn" id="1_cyj6l"]
+[ext_resource type="Texture2D" uid="uid://t5t2xxvfwjnf" path="res://Textures/LivingRoom/wooden_floor.jpg" id="1_xwk76"]
+[ext_resource type="PackedScene" uid="uid://b1vyllvi5dyqn" path="res://Interface/quit_button.tscn" id="3_8a3bj"]
+[ext_resource type="PackedScene" uid="uid://b2eourjtcmuxs" path="res://Objects/door.tscn" id="4_tugnl"]
+[ext_resource type="PackedScene" uid="uid://7hkliwi1vhmv" path="res://Objects/window.blend" id="5_4q5i4"]
+[ext_resource type="PackedScene" uid="uid://doobgrvn5p1b5" path="res://Objects/couch.blend" id="6_xlhyq"]
+[ext_resource type="PackedScene" uid="uid://drvnpqk6ofpqq" path="res://Objects/loungeChair.blend" id="7_ojqpm"]
+[ext_resource type="PackedScene" uid="uid://c2wsdsh0nwnp8" path="res://Objects/livingroomTable.blend" id="8_xvcyf"]
+[ext_resource type="PackedScene" uid="uid://dkp65mhxxe2r1" path="res://Objects/radiator.blend" id="9_wm1bc"]
+[ext_resource type="PackedScene" uid="uid://co5jsq4myhn3n" path="res://Objects/ceilingLight.blend" id="10_3ci87"]
+[ext_resource type="PackedScene" uid="uid://dcxkdsvuvnoqb" path="res://Objects/radiatorFoilWall.blend" id="10_ccmrg"]
+[ext_resource type="PackedScene" uid="uid://f630jjauena" path="res://Objects/cupboard.tscn" id="11_hm348"]
+[ext_resource type="PackedScene" uid="uid://ca5xe45nh1a56" path="res://Objects/radiatorFoil.blend" id="12_fm32q"]
+[ext_resource type="Script" path="res://Objects/cupboard.gd" id="12_myc25"]
+[ext_resource type="PackedScene" uid="uid://dejrqvysordn0" path="res://Objects/smallLamp.blend" id="12_t2did"]
+[ext_resource type="Script" path="res://Objects/small_lamp.gd" id="13_h72li"]
+[ext_resource type="PackedScene" uid="uid://cmsga61h2s4o7" path="res://Objects/bigLamp.blend" id="13_ipnh0"]
+[ext_resource type="PackedScene" uid="uid://dct68e44fu1hi" path="res://Objects/tv_stand.tscn" id="14_hsvra"]
+[ext_resource type="Script" path="res://Objects/big_lamp_left.gd" id="15_5xdpb"]
+[ext_resource type="PackedScene" uid="uid://cigtfaww3l6y8" path="res://Objects/tvRemote.blend" id="15_jsohs"]
+[ext_resource type="PackedScene" uid="uid://dunv6oaxojvgm" path="res://Objects/lightSwitch.blend" id="16_g8ljd"]
+[ext_resource type="Script" path="res://Objects/big_lamp_right.gd" id="16_ipq2d"]
+[ext_resource type="Script" path="res://Objects/light_switch.gd" id="17_16oan"]
+[ext_resource type="PackedScene" uid="uid://4ek2exrhgf43" path="res://Objects/thermostat.blend" id="17_wg7qo"]
+[ext_resource type="PackedScene" uid="uid://br7wbuplf4oef" path="res://Objects/clock.blend" id="18_m4l8e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0520b"]
+albedo_color = Color(0.999999, 0.997134, 0.80968, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1c4mn"]
+material = SubResource("StandardMaterial3D_0520b")
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mym61"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nw64"]
+albedo_color = Color(0.839216, 0.839216, 0.780392, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nt8ca"]
+material = SubResource("StandardMaterial3D_8nw64")
+size = Vector3(0.1, 2, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_844rx"]
+size = Vector3(0.1, 2, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fy7ll"]
+albedo_texture = ExtResource("1_xwk76")
+
+[sub_resource type="BoxMesh" id="BoxMesh_gry3u"]
+material = SubResource("StandardMaterial3D_fy7ll")
+size = Vector3(5, 0.1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ut6jm"]
+size = Vector3(10, 0.1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vk8e2"]
+size = Vector3(3.11731, 1, 1.13269)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2q3ff"]
+size = Vector3(2.65863, 4.31671, 3.57965)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q501o"]
+height = 2.17843
+radius = 2.34532
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5op15"]
+size = Vector3(0.603638, 1.37878, 2.23486)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yljgj"]
+size = Vector3(1.4848, 5.4032, 3.16687)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3mx7d"]
+height = 5.57397
+radius = 0.822316
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fu7r4"]
+size = Vector3(2.0365, 4.10773, 7.6803)
+
+[node name="LivingRoom" type="Node3D"]
+
+[node name="Ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96648, 0)
+mesh = SubResource("BoxMesh_1c4mn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ceiling/StaticBody3D"]
+shape = SubResource("BoxShape3D_mym61")
+
+[node name="FrontWall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.529531, 1.01907, 0)
+mesh = SubResource("BoxMesh_nt8ca")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FrontWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrontWall/StaticBody3D"]
+shape = SubResource("BoxShape3D_844rx")
+
+[node name="BackWall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94523, 1.01907, 0)
+mesh = SubResource("BoxMesh_nt8ca")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BackWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall/StaticBody3D"]
+shape = SubResource("BoxShape3D_844rx")
+
+[node name="LeftWall" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.00236607, 1.01907, 4.94977)
+mesh = SubResource("BoxMesh_nt8ca")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LeftWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall/StaticBody3D"]
+shape = SubResource("BoxShape3D_844rx")
+
+[node name="RightWall" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.00236607, 1.01907, -0.519295)
+mesh = SubResource("BoxMesh_nt8ca")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RightWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall/StaticBody3D"]
+shape = SubResource("BoxShape3D_844rx")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.10936, 0, 0, 0, 1, 0, 0, 0, 1, 2.18674, 0, 0)
+mesh = SubResource("BoxMesh_gry3u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_ut6jm")
+
+[node name="MaleCharacter" parent="." instance=ExtResource("1_cyj6l")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 3.3817, 0.0496357, 0.67523)
+
+[node name="Door" parent="." instance=ExtResource("4_tugnl")]
+transform = Transform3D(-0.224718, 0, 1.96455e-08, 0, 0.224718, 0, -1.96455e-08, 0, -0.224718, 4.48014, 0, 0.260555)
+script = null
+
+[node name="Window" parent="." instance=ExtResource("5_4q5i4")]
+transform = Transform3D(-0.16, 0, -2.41593e-08, 0, 0.16, 0, 2.41593e-08, 0, -0.16, 2.6943, 0.694839, 4.84656)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Window"]
+transform = Transform3D(6.25, -8.88109e-07, 1.2629e-06, 8.8811e-07, -2.11383, -5.88169, 1.2629e-06, 5.88169, -2.11383, 1.90735e-06, 2.29623, 1.26645)
+
+[node name="Window2" parent="." instance=ExtResource("5_4q5i4")]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 2.6943, 0.694839, -0.425867)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Window2"]
+transform = Transform3D(6.25, -8.88109e-07, 1.2629e-06, 8.8811e-07, -2.11383, -5.88169, 1.2629e-06, 5.88169, -2.11383, 1.90735e-06, 2.29623, 1.26645)
+
+[node name="Couch" parent="." instance=ExtResource("6_xlhyq")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 4.55028, -0.0836139, 2.30653)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Couch"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Couch/StaticBody3D"]
+transform = Transform3D(1, 0, 7.88702e-13, 0, 1, 0, -7.88702e-13, 0, 1, 1.05865, 0.562548, 0.0663452)
+shape = SubResource("BoxShape3D_vk8e2")
+
+[node name="Chair" parent="." instance=ExtResource("7_ojqpm")]
+transform = Transform3D(-0.119713, 0, -0.0903809, 0, 0.15, 0, 0.0903809, 0, -0.119713, 3.78259, 0.0642337, 4.19262)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Chair"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Chair/StaticBody3D"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.00552368, 2.06185, -0.821926)
+shape = SubResource("BoxShape3D_2q3ff")
+
+[node name="Table" parent="." instance=ExtResource("8_xvcyf")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 3.35055, 0.0588976, 2.96331)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Table"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Table/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04409, 0)
+shape = SubResource("CylinderShape3D_q501o")
+
+[node name="Radiator" parent="." instance=ExtResource("9_wm1bc")]
+transform = Transform3D(-1.5299e-08, 0, 0.35, 0, 0.35, 0, -0.35, 0, -1.5299e-08, 2.69352, 0.096774, 4.81899)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Radiator"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Radiator/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198182, 0.709944, 0.00610352)
+shape = SubResource("BoxShape3D_5op15")
+
+[node name="radiatorFoilWall" parent="Radiator" instance=ExtResource("10_ccmrg")]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 0, 0, 1.19324, -0.150169, 0, 0)
+
+[node name="ceilingLight" parent="." instance=ExtResource("10_3ci87")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.37933, 1.30555, 3.11992)
+
+[node name="Light" type="OmniLight3D" parent="ceilingLight"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.39291, 0)
+
+[node name="Cupboard" parent="." instance=ExtResource("11_hm348")]
+transform = Transform3D(0.000132064, -0.000445488, 0.2975, 0.000165674, 0.2975, 0.000445414, -0.2975, 0.000165477, 0.000132311, 0.933594, 0.0533794, 4.6803)
+script = ExtResource("12_myc25")
+
+[node name="radiatorFoil" parent="Cupboard/cupboard" index="1" instance=ExtResource("12_fm32q")]
+transform = Transform3D(0.000443893, 0.00055689, -1, -0.00149743, 0.999999, 0.000556225, 0.999999, 0.00149719, 0.000444726, -0.0770931, 0.95889, 0.787486)
+
+[node name="doorRight" parent="Cupboard/cupboard" index="3"]
+transform = Transform3D(0.712286, 0, 0.0117002, 0, 2.68798, 0, -0.00526747, 0, 1.58215, 0.792052, 2.43277, -1.51665)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cupboard"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cupboard/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -6.22435e-12, 0, -6.40691e-09, 1, 0.0223989, 2.69513, -0.0169003)
+shape = SubResource("BoxShape3D_yljgj")
+
+[node name="smallLamp" parent="." instance=ExtResource("12_t2did")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 3.34126, 0.361059, 2.99553)
+script = ExtResource("13_h72li")
+small_lamp = NodePath("Light")
+
+[node name="Light" type="SpotLight3D" parent="smallLamp"]
+transform = Transform3D(8.73058, 4.87616, 2.13144e-07, 0, -4.37114e-07, 10, 4.87616, -8.73058, -3.81626e-07, 0, 2.42742, 0)
+spot_range = 0.508998
+spot_angle = 64.2326
+
+[node name="bigLampLeft" parent="." instance=ExtResource("13_ipnh0")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.674878, 0.0499999, 4.06255)
+script = ExtResource("15_5xdpb")
+big_lamp_left = NodePath("Light")
+character_distance = 1.5
+
+[node name="Light" type="SpotLight3D" parent="bigLampLeft"]
+transform = Transform3D(4.85032, 2.70898, 1.18413e-07, 0, -2.42841e-07, 5.55556, 2.70898, -4.85032, -2.12014e-07, 2.66081, 3.8829, -0.0261784)
+spot_range = 0.984448
+spot_angle = 50.625
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bigLampLeft"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bigLampLeft/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71449, 2.78267, 0)
+shape = SubResource("CylinderShape3D_3mx7d")
+
+[node name="bigLampRight" parent="." instance=ExtResource("13_ipnh0")]
+transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, -0.674878, 0.0499999, 1.70071)
+script = ExtResource("16_ipq2d")
+big_lamp_right = NodePath("Light")
+
+[node name="Light" type="SpotLight3D" parent="bigLampRight"]
+transform = Transform3D(4.85032, 2.70898, 1.18413e-07, 0, -2.42841e-07, 5.55556, 2.70898, -4.85032, -2.12014e-07, 2.66081, 3.8829, -0.0261784)
+spot_range = 0.984448
+spot_angle = 50.625
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bigLampRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00255966)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bigLampRight/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71449, 2.78267, 0)
+shape = SubResource("CylinderShape3D_3mx7d")
+
+[node name="tvStand" parent="." instance=ExtResource("14_hsvra")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.208618, 0.05, 2.88059)
+
+[node name="tvRemote" parent="tvStand" instance=ExtResource("15_jsohs")]
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 1.60739, 1.69796, -0.100677)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tvStand"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tvStand/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00360107, 2.15743, -0.00628662)
+shape = SubResource("BoxShape3D_fu7r4")
+
+[node name="lightSwitch" parent="." instance=ExtResource("16_g8ljd")]
+transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 4.88493, 0.838271, 1.28602)
+script = ExtResource("17_16oan")
+ceiling_light = NodePath("../ceilingLight/Light")
+
+[node name="thermostat" parent="." instance=ExtResource("17_wg7qo")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.333789, 0.838, -0.458411)
+
+[node name="clock" parent="." instance=ExtResource("18_m4l8e")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 1.03057, 1.47655, -0.462141)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="QuitButton" parent="CanvasLayer" instance=ExtResource("3_8a3bj")]
+offset_top = 957.0
+offset_right = 215.0
+offset_bottom = 1080.0
+
+[editable path="Cupboard"]
+[editable path="Cupboard/cupboard"]

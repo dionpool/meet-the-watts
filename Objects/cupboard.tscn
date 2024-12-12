@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://f630jjauena"]
+
+[ext_resource type="PackedScene" uid="uid://7yyod4cx6m4h" path="res://Objects/cupboard.blend" id="1_0vt4k"]
+
+[node name="Cupboard" type="Node3D"]
+
+[node name="cupboard" parent="." instance=ExtResource("1_0vt4k")]
+
+[node name="doorLeft" parent="cupboard" index="1"]
+transform = Transform3D(0.712305, 0, 0, 0, 2.68798, 0, 0, 0, 1.58219, 0.792052, 2.45737, 1.50513)
+
+[node name="doorRight" parent="cupboard" index="2"]
+transform = Transform3D(0.712305, 0, 0, 0, 2.68798, 0, 0, 0, 1.58219, 0.792052, 2.43277, -1.51665)
+
+[editable path="cupboard"]

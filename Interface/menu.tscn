@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfs0hk6ceydt1"]
+
+[ext_resource type="Script" path="res://Interface/menu.gd" id="1_afro1"]
+[ext_resource type="Texture2D" uid="uid://bhoho830roadr" path="res://Textures/Menu/background.png" id="2_jq0oy"]
+[ext_resource type="PackedScene" uid="uid://b1vyllvi5dyqn" path="res://Interface/quit_button.tscn" id="3_5md8e"]
+[ext_resource type="Texture2D" uid="uid://draqxnkwmmky5" path="res://Textures/Menu/Nextbuttonhover.png" id="3_od7pu"]
+[ext_resource type="Texture2D" uid="uid://dvyrxxmaj1at6" path="res://Textures/Menu/Play.png" id="3_xhgqu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s4go3"]
+content_margin_left = 25.0
+content_margin_top = 50.0
+content_margin_right = 25.0
+content_margin_bottom = 50.0
+texture = ExtResource("3_od7pu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0o37"]
+content_margin_left = 25.0
+content_margin_top = 50.0
+content_margin_right = 25.0
+content_margin_bottom = 50.0
+texture = ExtResource("3_xhgqu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihjch"]
+content_margin_left = 25.0
+content_margin_top = 50.0
+content_margin_right = 25.0
+content_margin_bottom = 50.0
+texture = ExtResource("3_od7pu")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_afro1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_jq0oy")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ButtonGroup" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+offset_left = 835.0
+offset_top = 683.0
+offset_right = 1085.0
+offset_bottom = 1060.0
+alignment = 1
+
+[node name="StartButton" type="Button" parent="ButtonGroup"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxTexture_s4go3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l0o37")
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="ButtonGroup"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/hover = SubResource("StyleBoxTexture_ihjch")
+theme_override_styles/normal = SubResource("StyleBoxTexture_l0o37")
+text = "Settings"
+
+[node name="QuitButton" parent="ButtonGroup" instance=ExtResource("3_5md8e")]
+layout_mode = 2
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 1048.0
+offset_right = 49.0
+offset_bottom = 1071.0
+
+[connection signal="pressed" from="ButtonGroup/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ButtonGroup/SettingsButton" to="." method="_on_settings_button_pressed"]

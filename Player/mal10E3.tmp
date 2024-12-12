@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://76aintt6r8e6"]
+
+[ext_resource type="Script" path="res://Player/male_character.gd" id="1_hjvyb"]
+[ext_resource type="PackedScene" uid="uid://blxpqux0s41kq" path="res://Player/Male/maleCharacter.blend" id="2_6ablm"]
+[ext_resource type="Script" path="res://Player/camera.gd" id="3_xfvsj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxo6j"]
+radius = 0.317533
+height = 2.87769
+
+[node name="MaleCharacter" type="CharacterBody3D"]
+script = ExtResource("1_hjvyb")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Player" parent="Pivot" instance=ExtResource("2_6ablm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0509518, 1.1334, 0)
+shape = SubResource("CapsuleShape3D_bxo6j")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(-1, 2.38035e-08, -8.41198e-08, 0, 0.962218, 0.27228, 8.74228e-08, 0.27228, -0.962218, 0, 1.75338, -1.76434)
+script = ExtResource("3_xfvsj")

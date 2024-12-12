@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://76aintt6r8e6"]
+
+[ext_resource type="PackedScene" uid="uid://b15ipr0hnophe" path="res://Player/Male/lucasWatt.glb" id="2_1utnb"]
+[ext_resource type="Script" path="res://Player/camera.gd" id="3_xfvsj"]
+
+[sub_resource type="GDScript" id="GDScript_su4o2"]
+script/source = "extends CharacterBody3D
+
+
+@export var speed = 3
+@export var turn_speed = 2.5
+
+@onready var animation_player = $Pivot/Player/AnimationPlayer
+
+var target_velocity = Vector3.ZERO
+var target_direction = Vector3.ZERO
+
+func _physics_process(delta):
+	var direction = Vector3.ZERO
+
+	# Handle input for movement relative to character's local axes
+	if Input.is_action_pressed(\"move_right\"):
+		direction += transform.basis.x
+	if Input.is_action_pressed(\"move_left\"):
+		direction -= transform.basis.x
+	if Input.is_action_pressed(\"move_backward\"):
+		direction -= transform.basis.z
+	if Input.is_action_pressed(\"move_forward\"):
+		direction += transform.basis.z
+
+	if direction != Vector3.ZERO:
+		direction = direction.normalized()
+		target_direction = direction
+
+		# Move player in the direction
+		target_velocity = direction * speed
+
+		# Start animation if not already playing
+		if not animation_player.is_playing():
+			animation_player.play(\"metarigAction\")
+	else:
+		target_velocity = Vector3.ZERO
+
+		# Stop animation if the player is not moving
+		if animation_player.is_playing():
+			animation_player.stop()
+
+	# Smoothly rotate to face the target direction
+	if target_direction != Vector3.ZERO:
+		var current_forward = -global_transform.basis.z.normalized()
+		var angle_to_target = current_forward.angle_to(target_direction)
+
+		if angle_to_target > 0.01: # Avoid jittering for small angles
+			var rotation_axis = current_forward.cross(target_direction).normalized()
+			
+			# Check if rotation axis is non-zero
+			if rotation_axis != Vector3.ZERO:
+				var smooth_rotation = Quaternion(rotation_axis, angle_to_target * delta * turn_speed)
+				global_transform.basis = Basis(smooth_rotation) * global_transform.basis
+
+	velocity = target_velocity
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bxo6j"]
+radius = 0.317533
+height = 2.18682
+
+[node name="MaleCharacter" type="CharacterBody3D"]
+script = SubResource("GDScript_su4o2")
+speed = 2
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Player" parent="Pivot" instance=ExtResource("2_1utnb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Pivot/Player"]
+transform = Transform3D(3.45878e-07, 0.740362, -1.32811, 0, 2.61639, 0.375818, 1.7764, -1.44154e-07, 2.58594e-07, -1.76434, 1.75338, 7.71218e-08)
+
+[node name="Camera" type="Camera3D" parent="Pivot/Player/SpringArm3D"]
+physics_interpolation_mode = 1
+transform = Transform3D(0.777001, -7.10543e-15, 7.10543e-15, -1.77636e-15, 0.507614, 0, 1.42109e-14, 0, 1, 0, 0, 0)
+current = true
+script = ExtResource("3_xfvsj")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0509518, 0.847072, 0)
+shape = SubResource("CapsuleShape3D_bxo6j")
