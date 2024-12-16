@@ -6,10 +6,15 @@ extends Camera3D
 var target: CharacterBody3D
 
 func _ready():
-	# Get the parent character node
-	target = owner as CharacterBody3D
+	# After the scene is loaded, check the global selected character and assign the target
+	match Global.selected_character:
+		"male":
+			target = get_node("/root/LivingRoom/MaleCharacter")  # Adjust path as needed
+		"female":
+			target = get_node("/root/LivingRoom/FemaleCharacter")  # Adjust path as needed
+
 	if not target:
-		push_error("Camera3D's owner is not a CharacterBody3D!")
+		push_error("Camera3D's target is not a valid CharacterBody3D!")
 
 func _process(delta):
 	if target:

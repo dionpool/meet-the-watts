@@ -1,8 +1,4 @@
 res://World/living_room.tscn
-res://Player/male_character.tscn
-res://Objects/cupboard.gd
-res://Objects/big_lamp_left.gd
-res://Objects/big_lamp_right.gd
-res://Objects/light_switch.gd
-res://Objects/small_lamp.gd
+res://Interface/menu.tscn
 res://Interface/choose_character.tscn
+res://config.cfg

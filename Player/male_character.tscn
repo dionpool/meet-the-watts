@@ -75,12 +75,9 @@ speed = 2
 [node name="Player" parent="Pivot" instance=ExtResource("2_1utnb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Pivot/Player"]
-transform = Transform3D(3.45878e-07, 0.740362, -1.32811, 0, 2.61639, 0.375818, 1.7764, -1.44154e-07, 2.58594e-07, -1.76434, 1.75338, 7.71218e-08)
-
-[node name="Camera" type="Camera3D" parent="Pivot/Player/SpringArm3D"]
+[node name="MaleCamera" type="Camera3D" parent="Pivot/Player"]
 physics_interpolation_mode = 1
-transform = Transform3D(0.777001, -7.10543e-15, 7.10543e-15, -1.77636e-15, 0.507614, 0, 1.42109e-14, 0, 1, 0, 0, 0)
+transform = Transform3D(1.94707e-07, 0.27228, -0.962218, 5.02124e-16, 0.962218, 0.27228, 1, -5.30148e-08, 1.87351e-07, -1.76434, 1.75338, 7.71218e-08)
 current = true
 script = ExtResource("3_xfvsj")
 

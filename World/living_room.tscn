@@ -1,13 +1,16 @@
-[gd_scene load_steps=42 format=3 uid="uid://58m5tiy71sct"]
+[gd_scene load_steps=51 format=3 uid="uid://58m5tiy71sct"]
 
 [ext_resource type="PackedScene" uid="uid://76aintt6r8e6" path="res://Player/male_character.tscn" id="1_cyj6l"]
+[ext_resource type="Script" path="res://World/living_room.gd" id="1_fw6nm"]
 [ext_resource type="Texture2D" uid="uid://t5t2xxvfwjnf" path="res://Textures/LivingRoom/wooden_floor.jpg" id="1_xwk76"]
 [ext_resource type="PackedScene" uid="uid://b1vyllvi5dyqn" path="res://Interface/quit_button.tscn" id="3_8a3bj"]
+[ext_resource type="PackedScene" uid="uid://b4c647cloowbr" path="res://Player/female_character.tscn" id="3_sc1ms"]
 [ext_resource type="PackedScene" uid="uid://b2eourjtcmuxs" path="res://Objects/door.tscn" id="4_tugnl"]
 [ext_resource type="PackedScene" uid="uid://7hkliwi1vhmv" path="res://Objects/window.blend" id="5_4q5i4"]
 [ext_resource type="PackedScene" uid="uid://doobgrvn5p1b5" path="res://Objects/couch.blend" id="6_xlhyq"]
 [ext_resource type="PackedScene" uid="uid://drvnpqk6ofpqq" path="res://Objects/loungeChair.blend" id="7_ojqpm"]
 [ext_resource type="PackedScene" uid="uid://c2wsdsh0nwnp8" path="res://Objects/livingroomTable.blend" id="8_xvcyf"]
+[ext_resource type="Script" path="res://Objects/radiator.gd" id="9_u586u"]
 [ext_resource type="PackedScene" uid="uid://dkp65mhxxe2r1" path="res://Objects/radiator.blend" id="9_wm1bc"]
 [ext_resource type="PackedScene" uid="uid://co5jsq4myhn3n" path="res://Objects/ceilingLight.blend" id="10_3ci87"]
 [ext_resource type="PackedScene" uid="uid://dcxkdsvuvnoqb" path="res://Objects/radiatorFoilWall.blend" id="10_ccmrg"]
@@ -25,6 +28,12 @@
 [ext_resource type="Script" path="res://Objects/light_switch.gd" id="17_16oan"]
 [ext_resource type="PackedScene" uid="uid://4ek2exrhgf43" path="res://Objects/thermostat.blend" id="17_wg7qo"]
 [ext_resource type="PackedScene" uid="uid://br7wbuplf4oef" path="res://Objects/clock.blend" id="18_m4l8e"]
+[ext_resource type="Script" path="res://World/energy_bar.gd" id="28_dxip0"]
+[ext_resource type="Texture2D" uid="uid://4vakuh8jh5ub" path="res://Interface/HUD/Energyempty.png" id="29_1yqp1"]
+[ext_resource type="Texture2D" uid="uid://joet77efviye" path="res://Interface/HUD/Energyred.png" id="29_ct8hq"]
+[ext_resource type="Texture2D" uid="uid://bnclha7boinab" path="res://Interface/HUD/Energyorange.png" id="30_aunti"]
+[ext_resource type="Texture2D" uid="uid://b02siu88n7lhl" path="res://Interface/HUD/Energygreen.png" id="31_7qyka"]
+[ext_resource type="AudioStream" uid="uid://borymr02uh7n5" path="res://Audio/GameSong.mp3" id="34_v2efk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0520b"]
 albedo_color = Color(0.999999, 0.997134, 0.80968, 1)
@@ -80,6 +89,7 @@ radius = 0.822316
 size = Vector3(2.0365, 4.10773, 7.6803)
 
 [node name="LivingRoom" type="Node3D"]
+script = ExtResource("1_fw6nm")
 
 [node name="Ceiling" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96648, 0)
@@ -135,8 +145,12 @@ mesh = SubResource("BoxMesh_gry3u")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_ut6jm")
 
+[node name="FemaleCharacter" parent="." instance=ExtResource("3_sc1ms")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 3.382, 0.05, 0.419039)
+turn_speed = 1.0
+
 [node name="MaleCharacter" parent="." instance=ExtResource("1_cyj6l")]
-transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 3.3817, 0.0496357, 0.67523)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 3.33616, 0.0584039, 0.456968)
 
 [node name="Door" parent="." instance=ExtResource("4_tugnl")]
 transform = Transform3D(-0.224718, 0, 1.96455e-08, 0, 0.224718, 0, -1.96455e-08, 0, -0.224718, 4.48014, 0, 0.260555)
@@ -183,6 +197,8 @@ shape = SubResource("CylinderShape3D_q501o")
 
 [node name="Radiator" parent="." instance=ExtResource("9_wm1bc")]
 transform = Transform3D(-1.5299e-08, 0, 0.35, 0, 0.35, 0, -0.35, 0, -1.5299e-08, 2.69352, 0.096774, 4.81899)
+script = ExtResource("9_u586u")
+radiator_foil = NodePath("radiatorFoilWall")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Radiator"]
 
@@ -192,6 +208,7 @@ shape = SubResource("BoxShape3D_5op15")
 
 [node name="radiatorFoilWall" parent="Radiator" instance=ExtResource("10_ccmrg")]
 transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 0, 0, 1.19324, -0.150169, 0, 0)
+visible = false
 
 [node name="ceilingLight" parent="." instance=ExtResource("10_3ci87")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.37933, 1.30555, 3.11992)
@@ -275,6 +292,7 @@ shape = SubResource("BoxShape3D_fu7r4")
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 4.88493, 0.838271, 1.28602)
 script = ExtResource("17_16oan")
 ceiling_light = NodePath("../ceilingLight/Light")
+energy_bar = NodePath("../CanvasLayer/EnergyBar")
 
 [node name="thermostat" parent="." instance=ExtResource("17_wg7qo")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.333789, 0.838, -0.458411)
@@ -284,10 +302,42 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 1.03057, 1.47655, -0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="EnergyBar" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.48
+offset_top = 10.28
+offset_right = 8.48
+offset_bottom = 10.28
+scale = Vector2(0.5, 0.5)
+script = ExtResource("28_dxip0")
+bar_width = 1.0
+bar_height = 1.0
+base_empty_texture = ExtResource("29_1yqp1")
+red_overlay = ExtResource("29_ct8hq")
+yellow_overlay = ExtResource("30_aunti")
+green_overlay = ExtResource("31_7qyka")
+
+[node name="OverlayTexture" type="TextureRect" parent="CanvasLayer/EnergyBar"]
+layout_mode = 0
+
+[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer/EnergyBar"]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+
 [node name="QuitButton" parent="CanvasLayer" instance=ExtResource("3_8a3bj")]
-offset_top = 957.0
-offset_right = 215.0
-offset_bottom = 1080.0
+offset_left = 16.0
+offset_top = 976.0
+offset_right = 609.0
+offset_bottom = 1559.0
+scale = Vector2(0.15, 0.15)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_v2efk")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
 
 [editable path="Cupboard"]
 [editable path="Cupboard/cupboard"]

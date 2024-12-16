@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlxki3kltgy6o"]
+
+[ext_resource type="Script" path="res://Interface/onboarding.gd" id="1_5khal"]
+[ext_resource type="Texture2D" uid="uid://bhoho830roadr" path="res://Textures/Menu/background.png" id="1_nb6w4"]
+[ext_resource type="Texture2D" uid="uid://bvsqxkohqhd6u" path="res://Textures/Menu/Keys.png" id="2_77fa6"]
+[ext_resource type="Texture2D" uid="uid://b1omtl6td885g" path="res://Textures/Menu/Play.png" id="3_715j1"]
+[ext_resource type="PackedScene" uid="uid://b1vyllvi5dyqn" path="res://Interface/quit_button.tscn" id="5_xya0w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0a7uu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1gp3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ocuqj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wokmu"]
+
+[node name="Onboarding" type="Node2D"]
+script = ExtResource("1_5khal")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1081.0
+texture = ExtResource("1_nb6w4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Keys" type="TextureRect" parent="."]
+offset_left = 677.0
+offset_top = 492.0
+offset_right = 1720.0
+offset_bottom = 1534.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_77fa6")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 865.0
+offset_top = 883.0
+offset_right = 1458.0
+offset_bottom = 1466.0
+scale = Vector2(0.25, 0.25)
+theme_override_icons/icon = ExtResource("3_715j1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0a7uu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t1gp3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ocuqj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wokmu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="QuitButton" parent="CanvasLayer" instance=ExtResource("5_xya0w")]
+offset_left = 16.0
+offset_top = 977.0
+offset_right = 609.0
+offset_bottom = 1560.0
+scale = Vector2(0.15, 0.15)
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

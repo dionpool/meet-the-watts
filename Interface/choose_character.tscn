@@ -1,10 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdxq78l11r2nr"]
+[gd_scene load_steps=15 format=3 uid="uid://cdxq78l11r2nr"]
 
 [ext_resource type="Script" path="res://Interface/choose_character.gd" id="1_lswyx"]
 [ext_resource type="Texture2D" uid="uid://csofgj2llkl5q" path="res://Interface/Choose-Character/choose_male_character.jpg" id="2_7l4np"]
-[ext_resource type="Texture2D" uid="uid://dwdf3jq1jauxs" path="res://Interface/Choose-Character/choose_female_character.jpg" id="3_u53rv"]
+[ext_resource type="Texture2D" uid="uid://bhoho830roadr" path="res://Textures/Menu/background.png" id="2_yvfcv"]
+[ext_resource type="Texture2D" uid="uid://cwualn2hmhkoi" path="res://Interface/Choose-Character/choose_female_character.jpg" id="3_u53rv"]
+[ext_resource type="PackedScene" uid="uid://b1vyllvi5dyqn" path="res://Interface/quit_button.tscn" id="4_5covc"]
+[ext_resource type="AudioStream" uid="uid://bta47t386a2au" path="res://Audio/MenuSong.mp3" id="6_c4wia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uo10q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dwk1n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w70bw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xgjbn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_met1q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_st4la"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ef86j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmupu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -12,20 +27,20 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="ChooseCharacter" type="Node2D"]
 script = ExtResource("1_lswyx")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 1919.0
 offset_bottom = 1079.0
-color = Color(0.772549, 0.764706, 0.572549, 1)
+texture = ExtResource("2_yvfcv")
+expand_mode = 1
 
 [node name="CenterContent" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 1.0
-offset_top = 3.0
+offset_top = 401.0
 offset_right = 1921.0
 offset_bottom = 1083.0
 grow_horizontal = 2
@@ -38,6 +53,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 theme_override_icons/icon = ExtResource("2_7l4np")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uo10q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dwk1n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w70bw")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_xgjbn")
 icon_alignment = 1
 expand_icon = true
@@ -45,18 +63,26 @@ expand_icon = true
 [node name="FemaleButton" type="Button" parent="CenterContent/CharButtonGroup"]
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_met1q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_st4la")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ef86j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vmupu")
 icon = ExtResource("3_u53rv")
 icon_alignment = 1
 expand_icon = true
 
-[node name="QuitButton" type="Button" parent="."]
-offset_left = 45.0
-offset_top = 1011.0
-offset_right = 87.0
-offset_bottom = 1042.0
-text = "Quit"
+[node name="QuitButton" parent="." instance=ExtResource("4_5covc")]
+offset_left = 16.0
+offset_top = 976.0
+offset_right = 609.0
+offset_bottom = 1559.0
+scale = Vector2(0.15, 0.15)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_c4wia")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="CenterContent/CharButtonGroup/MaleButton" to="." method="_on_male_button_pressed"]
 [connection signal="pressed" from="CenterContent/CharButtonGroup/FemaleButton" to="." method="_on_female_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

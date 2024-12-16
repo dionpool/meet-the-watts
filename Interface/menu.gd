@@ -1,7 +1,7 @@
 extends Control
 
 var version = ""
-var choose_character = preload("res://Interface/choose_character.tscn")
+var onboarding = preload("res://Interface/onboarding.tscn")
 
 func _ready():
 	var config = ConfigFile.new()
@@ -12,9 +12,9 @@ func _ready():
 		
 	$Version.text = "version: %s" % version
 
-# Start button pressed
+# Onboarding button pressed
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_packed(choose_character)
+	get_tree().change_scene_to_packed(onboarding)
 
 # Settings button pressed
 func _on_settings_button_pressed() -> void:
