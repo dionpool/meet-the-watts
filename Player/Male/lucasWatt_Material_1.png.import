@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://3j0tnfsxnv40"
 path.s3tc="res://.godot/imported/lucasWatt_Material_1.png-d75ebccb35cb50ca6feba58a707867df.s3tc.ctex"
+path.etc2="res://.godot/imported/lucasWatt_Material_1.png-d75ebccb35cb50ca6feba58a707867df.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Player/Male/lucasWatt_Material_1.png"
-dest_files=["res://.godot/imported/lucasWatt_Material_1.png-d75ebccb35cb50ca6feba58a707867df.s3tc.ctex"]
+dest_files=["res://.godot/imported/lucasWatt_Material_1.png-d75ebccb35cb50ca6feba58a707867df.s3tc.ctex", "res://.godot/imported/lucasWatt_Material_1.png-d75ebccb35cb50ca6feba58a707867df.etc2.ctex"]
 
 [params]
 

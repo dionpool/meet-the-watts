@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cfs0hk6ceydt1"]
 
 [ext_resource type="Script" path="res://Interface/menu.gd" id="1_afro1"]
-[ext_resource type="Texture2D" uid="uid://bhoho830roadr" path="res://Textures/Menu/background.png" id="2_jq0oy"]
+[ext_resource type="Texture2D" uid="uid://dlllc2r3t28i0" path="res://Textures/Menu/background-v2.jpg" id="2_4yl2n"]
 [ext_resource type="PackedScene" uid="uid://b1vyllvi5dyqn" path="res://Interface/quit_button.tscn" id="3_5md8e"]
 [ext_resource type="Texture2D" uid="uid://b1omtl6td885g" path="res://Textures/Menu/Play.png" id="3_xhgqu"]
 [ext_resource type="AudioStream" uid="uid://bta47t386a2au" path="res://Audio/MenuSong.mp3" id="5_16h3v"]
@@ -30,7 +30,7 @@ script = ExtResource("1_afro1")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_jq0oy")
+texture = ExtResource("2_4yl2n")
 expand_mode = 1
 stretch_mode = 6
 

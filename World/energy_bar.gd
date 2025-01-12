@@ -47,7 +47,7 @@ func _ready():
 	# Reset position
 	position = Vector2(-bar_width/2, -bar_height)
 
-func _process(delta):
+func _process(_delta):
 	update_overlay()
 
 func add_energy(amount: float):

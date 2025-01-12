@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://caerd42b013pe"
 path.s3tc="res://.godot/imported/milenaWatts_Material_11.png-35af7e11af0e38576d86fd160beb9394.s3tc.ctex"
+path.etc2="res://.godot/imported/milenaWatts_Material_11.png-35af7e11af0e38576d86fd160beb9394.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Player/Female/milenaWatts_Material_11.png"
-dest_files=["res://.godot/imported/milenaWatts_Material_11.png-35af7e11af0e38576d86fd160beb9394.s3tc.ctex"]
+dest_files=["res://.godot/imported/milenaWatts_Material_11.png-35af7e11af0e38576d86fd160beb9394.s3tc.ctex", "res://.godot/imported/milenaWatts_Material_11.png-35af7e11af0e38576d86fd160beb9394.etc2.ctex"]
 
 [params]
 

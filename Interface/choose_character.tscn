@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Interface/choose_character.gd" id="1_lswyx"]
 [ext_resource type="Texture2D" uid="uid://csofgj2llkl5q" path="res://Interface/Choose-Character/choose_male_character.jpg" id="2_7l4np"]
-[ext_resource type="Texture2D" uid="uid://bhoho830roadr" path="res://Textures/Menu/background.png" id="2_yvfcv"]
+[ext_resource type="Texture2D" uid="uid://dlllc2r3t28i0" path="res://Textures/Menu/background-v2.jpg" id="2_08yj4"]
 [ext_resource type="Texture2D" uid="uid://cwualn2hmhkoi" path="res://Interface/Choose-Character/choose_female_character.jpg" id="3_u53rv"]
 [ext_resource type="PackedScene" uid="uid://b1vyllvi5dyqn" path="res://Interface/quit_button.tscn" id="4_5covc"]
 [ext_resource type="AudioStream" uid="uid://bta47t386a2au" path="res://Audio/MenuSong.mp3" id="6_c4wia"]
@@ -30,7 +30,7 @@ script = ExtResource("1_lswyx")
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1919.0
 offset_bottom = 1079.0
-texture = ExtResource("2_yvfcv")
+texture = ExtResource("2_08yj4")
 expand_mode = 1
 
 [node name="CenterContent" type="CenterContainer" parent="."]

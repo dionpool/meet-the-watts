@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dlxki3kltgy6o"]
 
 [ext_resource type="Script" path="res://Interface/onboarding.gd" id="1_5khal"]
-[ext_resource type="Texture2D" uid="uid://bhoho830roadr" path="res://Textures/Menu/background.png" id="1_nb6w4"]
 [ext_resource type="Texture2D" uid="uid://bvsqxkohqhd6u" path="res://Textures/Menu/Keys.png" id="2_77fa6"]
+[ext_resource type="Texture2D" uid="uid://dlllc2r3t28i0" path="res://Textures/Menu/background-v2.jpg" id="2_tp3v1"]
 [ext_resource type="Texture2D" uid="uid://b1omtl6td885g" path="res://Textures/Menu/Play.png" id="3_715j1"]
 [ext_resource type="PackedScene" uid="uid://b1vyllvi5dyqn" path="res://Interface/quit_button.tscn" id="5_xya0w"]
 
@@ -20,7 +20,7 @@ script = ExtResource("1_5khal")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1081.0
-texture = ExtResource("1_nb6w4")
+texture = ExtResource("2_tp3v1")
 expand_mode = 1
 stretch_mode = 4
 

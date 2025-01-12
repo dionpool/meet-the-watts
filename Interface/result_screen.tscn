@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0ku1f7itns14"]
+
+[ext_resource type="Texture2D" uid="uid://bod6cgisjn2km" path="res://Textures/Menu/background-circle.png" id="1_saw38"]
+[ext_resource type="Script" path="res://Interface/result_screen.gd" id="1_sslsx"]
+[ext_resource type="Texture2D" uid="uid://iaei05w04j5" path="res://Textures/Menu/Logo.png" id="3_it0i7"]
+[ext_resource type="Texture2D" uid="uid://d2l47xj0cinj1" path="res://Textures/Menu/Quit.png" id="3_wmh1w"]
+[ext_resource type="Texture2D" uid="uid://bydrjodwe3t3j" path="res://Textures/Menu/Results.png" id="4_hiogp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rolio"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fg84d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ln0fs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6yfql"]
+
+[node name="ResultScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sslsx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_saw38")
+expand_mode = 1
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(945, 181)
+scale = Vector2(0.563462, 0.563462)
+texture = ExtResource("3_it0i7")
+
+[node name="Results" type="Sprite2D" parent="."]
+position = Vector2(945, 691)
+scale = Vector2(0.676583, 0.676583)
+texture = ExtResource("4_hiogp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 504.0
+offset_right = 933.0
+offset_bottom = 544.0
+scale = Vector2(2, 2)
+text = "You saved € 100,-"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1113.0
+offset_top = 915.0
+offset_right = 1714.0
+offset_bottom = 1506.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rolio")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fg84d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ln0fs")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6yfql")
+icon = ExtResource("3_wmh1w")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

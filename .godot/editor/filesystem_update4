@@ -1,4 +1,8 @@
-res://World/living_room.tscn
 res://Interface/menu.tscn
-res://Interface/choose_character.tscn
 res://config.cfg
+res://Interface/result_screen.tscn
+res://Interface/quit_button.gd
+res://World/living_room.tscn
+res://Interface/choose_character.tscn
+res://Interface/onboarding.tscn
+res://Interface/result_screen.gd
