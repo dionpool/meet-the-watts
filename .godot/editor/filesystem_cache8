@@ -1,5 +1,5 @@
 bdbec74c6e5bd72edee867077d70896c
-::res://::1736245054
+::res://::1736853359
 config.cfg::TextFile::-1::1736245054::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1734516488::0::1::::<><>::
 icon.png::CompressedTexture2D::7412356658890584710::1734349760::1734349772::1::::<><>::
@@ -7,17 +7,17 @@ README.md::TextFile::-1::1734014884::0::1::::<><>::
 ::res://Audio/::1734359619
 GameSong.mp3::AudioStreamMP3::3405638486568683120::1734359576::1734359619::1::::<><>::
 MenuSong.mp3::AudioStreamMP3::3721827693749903504::1734359576::1734359619::1::::<><>::
-::res://Interface/::1736246010
+::res://Interface/::1736246804
 choose_character.gd::GDScript::-1::1734356083::0::1::::<>Node2D<>::
 choose_character.tscn::PackedScene::5031918955413063135::1736245613::0::1::::<><>::res://Interface/choose_character.gd<>uid://csofgj2llkl5q::::res://Interface/Choose-Character/choose_male_character.jpg<>uid://dlllc2r3t28i0::::res://Textures/Menu/background-v2.jpg<>uid://cwualn2hmhkoi::::res://Interface/Choose-Character/choose_female_character.jpg<>uid://b1vyllvi5dyqn::::res://Interface/quit_button.tscn<>uid://bta47t386a2au::::res://Audio/MenuSong.mp3
 menu.gd::GDScript::-1::1734349305::0::1::::<>Control<>::
-menu.tscn::PackedScene::5162475383745537836::1736246010::0::1::::<><>::res://Interface/menu.gd<>uid://dlllc2r3t28i0::::res://Textures/Menu/background-v2.jpg<>uid://b1vyllvi5dyqn::::res://Interface/quit_button.tscn<>uid://b1omtl6td885g::::res://Textures/Menu/Play.png<>uid://bta47t386a2au::::res://Audio/MenuSong.mp3
+menu.tscn::PackedScene::5162475383745537836::1736246790::0::1::::<><>::res://Interface/menu.gd<>uid://dlllc2r3t28i0::::res://Textures/Menu/background-v2.jpg<>uid://b1vyllvi5dyqn::::res://Interface/quit_button.tscn<>uid://b1omtl6td885g::::res://Textures/Menu/Play.png<>uid://bta47t386a2au::::res://Audio/MenuSong.mp3
 onboarding.gd::GDScript::-1::1734349405::0::1::::<>Node2D<>::
 onboarding.tscn::PackedScene::7979442962347230924::1736245613::0::1::::<><>::res://Interface/onboarding.gd<>uid://bvsqxkohqhd6u::::res://Textures/Menu/Keys.png<>uid://dlllc2r3t28i0::::res://Textures/Menu/background-v2.jpg<>uid://b1omtl6td885g::::res://Textures/Menu/Play.png<>uid://b1vyllvi5dyqn::::res://Interface/quit_button.tscn
 quit_button.gd::GDScript::-1::1736245316::0::1::::<>Button<>::
 quit_button.tscn::PackedScene::4256160013278011333::1734348454::0::1::::<><>::res://Interface/quit_button.gd<>uid://d2l47xj0cinj1::::res://Textures/Menu/Quit.png
-result_screen.gd::GDScript::-1::1736246008::0::1::::<>Node2D<>::
-result_screen.tscn::PackedScene::6549467318814364529::1736246010::0::1::::<><>::uid://bod6cgisjn2km::::res://Textures/Menu/background-circle.png<>res://Interface/result_screen.gd<>uid://d2l47xj0cinj1::::res://Textures/Menu/Quit.png
+result_screen.gd::GDScript::-1::1736246804::0::1::::<>Node<>::
+result_screen.tscn::PackedScene::6549467318814364529::1736246804::0::1::::<><>::uid://bod6cgisjn2km::::res://Textures/Menu/background-circle.png<>res://Interface/result_screen.gd<>uid://iaei05w04j5::::res://Textures/Menu/Logo.png<>uid://d2l47xj0cinj1::::res://Textures/Menu/Quit.png<>uid://bydrjodwe3t3j::::res://Textures/Menu/Results.png
 ::res://Interface/Choose-Character/::1734351483
 choose_female_character.jpg::CompressedTexture2D::6358303851084706212::1734351477::1734351483::1::::<><>::
 choose_male_character.jpg::CompressedTexture2D::6065456656089650264::1734010638::1734010642::1::::<><>::
@@ -91,7 +91,7 @@ Global.gd::GDScript::-1::1734353160::0::1::::<>Node<>::
 ::res://Textures/::1733309288
 ::res://Textures/LivingRoom/::1734516186
 wooden_floor.jpg::CompressedTexture2D::1396722445571659587::1733226009::1734516186::1::::<><>::
-::res://Textures/Menu/::1736246069
+::res://Textures/Menu/::1736246073
 background-circle.png::CompressedTexture2D::3377143754580247300::1736245709::1736245731::1::::<><>::
 background-v2.jpg::CompressedTexture2D::7954720390591368693::1736245511::1736245522::1::::<><>::
 Keys.png::CompressedTexture2D::3898558292009405398::1734348833::1734348859::1::::<><>::
@@ -101,7 +101,7 @@ Play.png::CompressedTexture2D::4240995067350577246::1734347686::1734347827::1:::
 Playhover.png::CompressedTexture2D::2454600055146068627::1733309377::1733309382::1::::<><>::
 Quit.png::CompressedTexture2D::9078888145875200320::1734347666::1734347827::1::::<><>::
 Results.png::CompressedTexture2D::4078195066257594925::1736246057::1736246073::1::::<><>::
-::res://World/::1736246010
+::res://World/::1736246790
 energy_bar.gd::GDScript::-1::1734361144::0::1::::<>Control<>::
 living_room.gd::GDScript::-1::1734353485::0::1::::<>Node3D<>::
-living_room.tscn::PackedScene::2174572964191632367::1736246010::0::1::::<><>::uid://76aintt6r8e6::::res://Player/male_character.tscn<>res://World/living_room.gd<>uid://t5t2xxvfwjnf::::res://Textures/LivingRoom/wooden_floor.jpg<>uid://b1vyllvi5dyqn::::res://Interface/quit_button.tscn<>uid://b4c647cloowbr::::res://Player/female_character.tscn<>uid://b2eourjtcmuxs::::res://Objects/door.tscn<>uid://7hkliwi1vhmv::::res://Objects/window.blend<>uid://doobgrvn5p1b5::::res://Objects/couch.blend<>uid://drvnpqk6ofpqq::::res://Objects/loungeChair.blend<>uid://c2wsdsh0nwnp8::::res://Objects/livingroomTable.blend<>res://Objects/radiator.gd<>uid://dkp65mhxxe2r1::::res://Objects/radiator.blend<>uid://co5jsq4myhn3n::::res://Objects/ceilingLight.blend<>uid://dcxkdsvuvnoqb::::res://Objects/radiatorFoilWall.blend<>uid://f630jjauena::::res://Objects/cupboard.tscn<>uid://ca5xe45nh1a56::::res://Objects/radiatorFoil.blend<>res://Objects/cupboard.gd<>uid://dejrqvysordn0::::res://Objects/smallLamp.blend<>res://Objects/small_lamp.gd<>uid://cmsga61h2s4o7::::res://Objects/bigLamp.blend<>uid://dct68e44fu1hi::::res://Objects/tv_stand.tscn<>res://Objects/big_lamp_left.gd<>uid://cigtfaww3l6y8::::res://Objects/tvRemote.blend<>uid://dunv6oaxojvgm::::res://Objects/lightSwitch.blend<>res://Objects/big_lamp_right.gd<>res://Objects/light_switch.gd<>uid://4ek2exrhgf43::::res://Objects/thermostat.blend<>uid://br7wbuplf4oef::::res://Objects/clock.blend<>res://World/energy_bar.gd<>uid://4vakuh8jh5ub::::res://Interface/HUD/Energyempty.png<>uid://joet77efviye::::res://Interface/HUD/Energyred.png<>uid://bnclha7boinab::::res://Interface/HUD/Energyorange.png<>uid://b02siu88n7lhl::::res://Interface/HUD/Energygreen.png<>uid://borymr02uh7n5::::res://Audio/GameSong.mp3
+living_room.tscn::PackedScene::2174572964191632367::1736246790::0::1::::<><>::uid://76aintt6r8e6::::res://Player/male_character.tscn<>res://World/living_room.gd<>uid://t5t2xxvfwjnf::::res://Textures/LivingRoom/wooden_floor.jpg<>uid://b1vyllvi5dyqn::::res://Interface/quit_button.tscn<>uid://b4c647cloowbr::::res://Player/female_character.tscn<>uid://b2eourjtcmuxs::::res://Objects/door.tscn<>uid://7hkliwi1vhmv::::res://Objects/window.blend<>uid://doobgrvn5p1b5::::res://Objects/couch.blend<>uid://drvnpqk6ofpqq::::res://Objects/loungeChair.blend<>uid://c2wsdsh0nwnp8::::res://Objects/livingroomTable.blend<>res://Objects/radiator.gd<>uid://dkp65mhxxe2r1::::res://Objects/radiator.blend<>uid://co5jsq4myhn3n::::res://Objects/ceilingLight.blend<>uid://dcxkdsvuvnoqb::::res://Objects/radiatorFoilWall.blend<>uid://f630jjauena::::res://Objects/cupboard.tscn<>uid://ca5xe45nh1a56::::res://Objects/radiatorFoil.blend<>res://Objects/cupboard.gd<>uid://dejrqvysordn0::::res://Objects/smallLamp.blend<>res://Objects/small_lamp.gd<>uid://cmsga61h2s4o7::::res://Objects/bigLamp.blend<>uid://dct68e44fu1hi::::res://Objects/tv_stand.tscn<>res://Objects/big_lamp_left.gd<>uid://cigtfaww3l6y8::::res://Objects/tvRemote.blend<>uid://dunv6oaxojvgm::::res://Objects/lightSwitch.blend<>res://Objects/big_lamp_right.gd<>res://Objects/light_switch.gd<>uid://4ek2exrhgf43::::res://Objects/thermostat.blend<>uid://br7wbuplf4oef::::res://Objects/clock.blend<>res://World/energy_bar.gd<>uid://4vakuh8jh5ub::::res://Interface/HUD/Energyempty.png<>uid://joet77efviye::::res://Interface/HUD/Energyred.png<>uid://bnclha7boinab::::res://Interface/HUD/Energyorange.png<>uid://b02siu88n7lhl::::res://Interface/HUD/Energygreen.png<>uid://borymr02uh7n5::::res://Audio/GameSong.mp3
